@@ -1,22 +1,17 @@
 package main
 
-import "fmt"
 
-func main(){
 
- var usuario string
- var senha string 
- fmt.Println("Digite o seu nome:")
- fmt.Scanln(&usuario)
 
- fmt.Println("Digite o numero")
- fmt.Scanln(&senha)
+ import "fmt" 
 
-if usuario == "julia" && senha == "1234" {
-	fmt.Println("Login feito com sucesso ")
-	
-}else{
-fmt.Println("Acesso negado")
-}
+ func main() {
+
+	var ages = [4]int{17, 16, 20, 40} 
+	names := [4] string {"Julia", "Malu", "Will", "Vivi"}
+	fmt.Println(ages)
+	fmt.Println(names)
+	names[3] = "Jujuu"
+	fmt.Println(names)
 
 }

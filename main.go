@@ -1,28 +1,32 @@
-package main
+package main 
+
+import (
+      "fmt"
+      "strings" 
+	  "sort"
+    )
 
 
-
-
- import "fmt" 
-
- func main() {
-
-	var ages = [4]int{17, 16, 20, 40} 
-	names := [4] string {"Julia", "Malu", "Will", "Vivi"}
+func main() {
+    greeting := "Hello my friends"
+    fmt.Println(strings.Contains(greeting, "dog"))
+    fmt.Println(strings.ReplaceAll(greeting, "my", "mine"))
+	fmt.Println(strings.ToUpper(greeting))
+	fmt.Println(strings.ToLower(greeting))
+	fmt.Println(strings.Index(greeting, "my"))
+    fmt.Println(strings.Split(greeting, "!"))
+	ages := []int {50, 80, 10}
+	sort.Ints(ages)
 	fmt.Println(ages)
+	index := sort.SearchInts(ages, 50)
+	fmt.Println(index)
+	names := []string{"Julia", "Maria", "Rodrigues"}
+	sort.Strings(names)
 	fmt.Println(names)
-	names[3] = "Jujuu"
-	fmt.Println(names)
-	//Slice
-	var score = []int{10,20,30,40}
-	fmt.Println(score)
-	score[1] = 2 
-	fmt.Println(score, len(score), cap(score))
-	rangeOne := score[1:3]
-	fmt.Println(rangeOne)
+	fmt.Println(sort.SearchStrings(names, "Julia"))
 
-	var superherois = [] string {"homem-aranha", "homem de ferro", "hulk"}
-	fmt.Println(superherois)
-	superherois = append(superherois, "laterna verde", "flash")
-	fmt.Println(superherois, len(superherois), cap(superherois))
+	
+
  }
+
+ 

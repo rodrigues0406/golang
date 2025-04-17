@@ -3,29 +3,24 @@ package main
 import (
 	"fmt"
 )
-func dividir(dividendo int, divisor int) (int, string){
-	if divisor == 0 {
-		return 0, "erro na divisão para o zero"
-	}
-		return dividendo / divisor, "sem erro"
+func main() {
+	alunoIdade :=  make(map[string]int)
+    alunoIdade["Julia"] = 16
+    alunoIdade["Isadora"] = 16
+    alunoIdade["Isabelly"] = 16
+    alunoIdade["Manu"] = 15
+    fmt.Println("Idade da Julia", alunoIdade["Julia"])
+    notasAlunos := map[string]float64{
+        "Bruno" : 9.7,
+        "Otávio" : 10,
+        "Fabiano" : 8.7,
+        "Isabelly" :9.5,
+    
+    }
+    for nome,nota := range notasAlunos{
+        fmt.Printf("%s tirou a nota %.1f\n", nome,nota)
+    }
+}
 
-	}
 
-func operacaoBasica(a int, b int) (int, int, int){
-	soma:= a + b
-	multiplicacao := a * b 
-	subitracao := a - b 
-  return soma, multiplicacao, subitracao
-}
-	func main() {
-	resultado, erro := dividir(10,0)
-	if erro != "sem erro"{
-		fmt.Println(erro)
-}else {
-	fmt.Println("o resultado da divisão é:", resultado, erro)
-}
-soma, mult, sub := operacaoBasica(10,2)
-fmt.Println(soma)
-fmt.Println(mult)
-fmt.Println(sub)
-}
+

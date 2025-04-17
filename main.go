@@ -3,33 +3,29 @@ package main
 import (
 	"fmt"
 )
-
-func main() {
-	var saldo int
-	var comando string
-	var valor int
-
-	fmt.Println("Digite seu saldo inicial: ")
-	fmt.Scanln(&saldo)
-
-	fmt.Println("saldo atual:", saldo)
-	fmt.Println(" deseja sacar ou depositar? sacar/depositar")
-	fmt.Scanln(&comando)
-	if comando == "sacar" {
-		fmt.Println("digite o valor que irá sacar")
-		fmt.Scanln(&valor)
-		if valor > saldo {
-			fmt.Println("saldo indisponivel", saldo)
-		} else {
-			saldo -= valor
-			fmt.Println("saque realizado com sucesso!", valor, "seu saldo atual agora é", saldo)
-		}
-	} else if comando == "depositar" {
-		fmt.Println("digite o valor que irá depositar:")
-		fmt.Scan(&valor)
-		saldo += valor
-		fmt.Println("deposito realizado com sucesso, seu saldo é", saldo)
+func dividir(dividendo int, divisor int) (int, string){
+	if divisor == 0 {
+		return 0, "erro na divisão para o zero"
+	}
+		return dividendo / divisor, "sem erro"
 
 	}
 
+func operacaoBasica(a int, b int) (int, int, int){
+	soma:= a + b
+	multiplicacao := a * b 
+	subitracao := a - b 
+  return soma, multiplicacao, subitracao
+}
+	func main() {
+	resultado, erro := dividir(10,0)
+	if erro != "sem erro"{
+		fmt.Println(erro)
+}else {
+	fmt.Println("o resultado da divisão é:", resultado, erro)
+}
+soma, mult, sub := operacaoBasica(10,2)
+fmt.Println(soma)
+fmt.Println(mult)
+fmt.Println(sub)
 }

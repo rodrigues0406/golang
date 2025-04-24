@@ -3,21 +3,26 @@ package main
 import "fmt" 
 
 func main(){ 
-    capitais := map[string]string{
-        "SP" : "São Paulo",
-        "RJ" : "Rio de Janeiro",
-        "ES" : "Espirito Santo",
-        "AC" : "Acre",
+    estoque := map[string]int{
+        "coxinha" : 10,
+        "pão de queijo" : 15,
+        "refrigerante" : 20,
+        
     }
-    capitais["BH"] = "Belo Horizonte"
- for k,v := range capitais {
-    fmt.Println("Sigla, Nome", k,v)
- }
+  
+ estoque["coxinha"] -=2
 
- delete(capitais, "AC")
+ estoque["pão de queijo"]-=1
 
- for k,v := range capitais { 
-    fmt.Println("Sigla, Nome", k,v)
+ estoque["refrigerante"] -=3
+
+ for k,v := range estoque{
+    fmt.Println(" produto/ estoque", k,v)
  }
 }
+
+
+
+
+
 
